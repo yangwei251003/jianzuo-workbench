@@ -1,0 +1,49 @@
+{
+  "checked_at": "2026-10-26",
+  "environment": "Windows / Node24 / pnpm10.33.2 / isolated Chrome",
+  "checks": [
+    {
+      "check": "typecheck",
+      "exit_code": 0,
+      "elapsed_seconds": 12.13
+    },
+    {
+      "check": "unit",
+      "exit_code": 0,
+      "elapsed_seconds": 26.09
+    },
+    {
+      "check": "build",
+      "exit_code": 0,
+      "elapsed_seconds": 15.88
+    },
+    {
+      "check": "browser",
+      "exit_code": 0,
+      "elapsed_seconds": 100.68
+    }
+  ],
+  "existing_unit_tests_passed": 173,
+  "existing_browser_tests_passed": 33,
+  "data": "new temporary seeded demonstration database only",
+  "real_account_or_customer_database_copied": false,
+  "real_platform_publish_reply_delivery": false,
+  "real_codex_model_generation": false,
+  "native_electron_runtime_tested": false,
+  "audit_counts": {
+    "prod": {
+      "info": 0,
+      "low": 0,
+      "moderate": 1,
+      "high": 0,
+      "critical": 0
+    },
+    "all": {
+      "info": 0,
+      "low": 0,
+      "moderate": 1,
+      "high": 0,
+      "critical": 0
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "@jianzuo/worker",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/main.ts",
+    "start": "tsx src/main.ts",
+    "build": "tsc --noEmit",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@jianzuo/contracts": "workspace:*",
+    "@jianzuo/core": "workspace:*",
+    "@jianzuo/database": "workspace:*",
+    "node-notifier": "^10.0.1"
+  },
+  "devDependencies": {
+    "@types/node-notifier": "^8.0.5"
+  }
+}

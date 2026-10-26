@@ -1,0 +1,50 @@
+{
+  "name": "jianzuo-xianyu-ai-workbench",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "简作 · 闲鱼 AI 运营工作台",
+  "packageManager": "pnpm@10.33.2",
+  "engines": {
+    "node": ">=24.0.0",
+    "pnpm": ">=10.0.0"
+  },
+  "scripts": {
+    "dev": "concurrently -k -n API,WEB,MOCK,WORKER -c blue,cyan,yellow,green \"pnpm --filter @jianzuo/api dev\" \"pnpm --filter @jianzuo/web dev\" \"pnpm --filter @jianzuo/mock-xianyu dev\" \"pnpm --filter @jianzuo/worker dev\"",
+    "build": "pnpm -r build",
+    "typecheck": "pnpm -r typecheck",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "pnpm build && playwright test",
+    "start": "concurrently -k -n API,WORKER -c blue,green \"pnpm --filter @jianzuo/api start\" \"pnpm --filter @jianzuo/worker start\"",
+    "setup:windows": "powershell -ExecutionPolicy Bypass -File scripts/setup.ps1",
+    "start:windows": "powershell -ExecutionPolicy Bypass -File scripts/start.ps1",
+    "stop:windows": "powershell -ExecutionPolicy Bypass -File scripts/stop.ps1",
+    "desktop": "pnpm --filter @jianzuo/desktop start",
+    "desktop:build": "pnpm --filter @jianzuo/desktop build"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "electron",
+      "esbuild",
+      "sharp"
+    ],
+    "overrides": {
+      "fast-uri@>=3.0.0 <4.0.0": "3.1.9",
+      "fast-uri@>=4.0.0 <5.0.0": "4.2.3",
+      "brace-expansion@>=5.0.0 <6.0.0": "5.0.12",
+      "shell-quote@>=1.8.4 <2.0.0": "1.11.0",
+      "source-map-js@>=1.0.0 <2.0.0": "1.2.2",
+      "undici@>=7.0.0 <8.0.0": "7.30.1"
+    }
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.62.1",
+    "@types/node": "^26.4.0",
+    "@vitest/coverage-v8": "4.1.12",
+    "concurrently": "^10.0.5",
+    "tsx": "^4.23.12",
+    "typescript": "^7.0.2",
+    "vitest": "4.1.12"
+  }
+}

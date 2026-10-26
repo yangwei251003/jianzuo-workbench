@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "简作连接助手",
+  "version": "0.2.0",
+  "description": "将可见的闲鱼页面连接到本机简作工作台。",
+  "permissions": ["storage", "activeTab", "scripting", "alarms"],
+  "host_permissions": [
+    "http://127.0.0.1/*",
+    "http://localhost/*",
+    "https://www.goofish.com/*",
+    "https://2.taobao.com/*"
+  ],
+  "background": { "service_worker": "background.js", "type": "module" },
+  "action": { "default_title": "简作连接助手", "default_popup": "popup.html" },
+  "content_scripts": [
+    {
+      "matches": ["http://127.0.0.1/*", "http://localhost/*", "https://www.goofish.com/*", "https://2.taobao.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "minimum_chrome_version": "116"
+}
